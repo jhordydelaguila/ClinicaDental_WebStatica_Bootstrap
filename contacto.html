@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Clinica Dental Sonrisas</title>
+
+	<link rel="stylesheet"  href="css/bootstrap.min.css">
+	<link rel="stylesheet"  href="css/estilos.css">
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#idNavbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Barra de navegacion</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand pacifico " href="index.html">Sonrisas</a>
+		</div>
+		<div id="idNavbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="clinica.html">Clinica Dental</a></li>
+				<li><a href="tratamiento.html">Tratamientos</a></li>
+				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="#"><span class=" glyphicon glyphicon-globe logo" aria-hidden="true"></span> Mapa</a></li>
+				<li><a href="#"><span class="glyphicon glyphicon-phone-alt logo" aria-hidden="true"></span> 944635663</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container">
+	<div class="row">
+		<div id="googleMap" style="width:100%px;height:400px;"></div>
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<h2 class="font-celeste "><strong>Tienes alguna duda</strong></h2>
+			<hr>
+			<p>Enviamos un mensaje, rellene el formulario de abajo.</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<form role="form" name="form">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Nombre" name="nombre">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Telefono" name="telefono">
+						</div>
+						<div class="form-group">
+							<input type="email" class="form-control" placeholder="Correo electronico" name="correo">
+						</div>
+						<div class="form-group">
+							<textarea class="form-control" rows=5 placeholder="Mensaje" name="mensaje"></textarea>
+						</div>
+						<div class="form-group">
+							<label >Cuanto es 2 + dos</label>
+							<input type="text" class="form-control" placeholder="Resultado" name="resultado">
+						</div>
+						<input class="btn btn-default" type="submit" value="Enviar"></input>
+						<input class="btn btn-default" type="reset" value="Borrar"></input>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-5 col-md-offset-1">
+			<section>
+				<h2 class="font-celeste"><strong>Contacto</strong></h2>
+				<hr>
+				<p>Contactamos a nosotros y te responderemos en menos de 24 horas.</p>
+				<p><b>Consultorio</b></p>
+				<p><span class="glyphicon glyphicon-map-marker"></span>
+				Calle Sucre con Pacasmayo - Salaverry
+				</p>
+				<p><b>Telefono</b></p>
+				<p><span class="glyphicon glyphicon-phone"></span>
+				#944635663
+				</p> 
+				<p><b>Correo</b></p> 
+				<p><span class="glyphicon glyphicon-envelope"></span>
+				gean1011@hotmail.com
+				</p> 
+				<p><b>Horario</b></p>
+				<p><span class="glyphicon glyphicon-calendar"></span>
+				Lunes - Sabado	<br>
+				9:00 am - 1:00 pm <br>
+				4:00 pm - 9:00 pm
+				</p>
+				<div class="well">
+					<p><strong>TE PODEMOS ATENDER, DOMINGO Y FERIADOS PREVIA CITA.</strong><br>		
+					Envianos un mensaje o contactame por el numero 956182522.</p>
+				</div>
+			</section>
+		</div>
+	</div>
+</div>
+
+<script>
+			var myCenter=new google.maps.LatLng(-8.2213011,-78.97641469999996);
+
+			function initialize()
+			{
+			var mapProp = {
+			  center: myCenter,
+			  zoom:15,
+			  mapTypeId: google.maps.MapTypeId.ROADMAP
+			  };
+
+			var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+			var marker = new google.maps.Marker({
+			  position: myCenter,
+			  title:'Click to zoom'
+			  });
+
+			marker.setMap(map);
+			google.maps.event.addListener(marker,'click',function() {
+			  map.setZoom(9);
+			  map.setCenter(marker.getPosition());
+			  });
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+
+<footer class="text-center">
+	<p>Derechos reservados. Trujillo - Perú &nbsp;&nbsp; |&nbsp;&nbsp; Contacto: 956182522 &nbsp;&nbsp; |&nbsp;&nbsp; Contactame tambien por <a href="https://www.facebook.com/jhordy.alexii">Facebbok</a></p>
+</footer>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</body>
+</html>
